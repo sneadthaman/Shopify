@@ -35,12 +35,12 @@ export default {
     },
 
     updateResults(data) {
-      this.searchResults = data.Search;
+      this.searchResults = data;
     }
   }
 }
 </script>
 
 <style>
-@import './assets/css/style.css';
+@import './assets/scss/style.css';
 </style>

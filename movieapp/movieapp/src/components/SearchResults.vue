@@ -3,7 +3,7 @@
     <section>
       <p>Results for {{ searchString }}</p>
       <ul v-if="searchResults.length > 0">
-        <li v-for="result in searchResults" :key="result.index">{{ result.Title }}</li>
+        <li v-for="movie in searchResults" :key="movie.id">{{ movie.Title }}</li>
       </ul>
     </section>
   </div>
@@ -13,12 +13,8 @@
 export default{
   name: 'search-results',
   props: {
-    search: {
-      type: String
-    },
-    result: {
-
-    }
+    search: String,
+    result: Array
   },
   data(){
     return{
@@ -31,9 +27,11 @@ export default{
   watch: {
     search() {
       this.searchString = this.search;
+      console.log(this.searchString)
     },
     result() {
       this.searchResults = this.result;
+      console.log(this.searchResults)
     }
   }
 }
